@@ -38,6 +38,6 @@ public class NinjaRecoverFromPushState : NinjaAbstractState
 
     private void RollNinjaBack(NinjaStateManager ninja)
     {
-        ninja.transform.Rotate(Vector3.right, 1.5f);
+        ninja.transform.Rotate(Vector3.right, 5f);
     }
 }

@@ -10,14 +10,13 @@ public class UI_ManagerEntryScene : MonoBehaviour
 
     void Start()
     {
-        if(PlayerPrefs.GetInt("Level") == 0)
+        if (PlayerPrefs.GetInt("Level") == 0)
             PlayerPrefs.SetInt("Level",1);
-        else if (PlayerPrefs.GetInt("Level") > SceneManager.sceneCount)
+        else if (PlayerPrefs.GetInt("Level") > SceneManager.sceneCountInBuildSettings -1)
         {
             PlayerPrefs.SetInt("Level",1);
             Debug.LogError("!!! ALL LEVELS ARE PLAYED, SO LEVEL IS RESET TO LEVEL-1  !!!");
         }
-
     }
 
     private void Update()
@@ -29,10 +28,9 @@ public class UI_ManagerEntryScene : MonoBehaviour
     public void StartFromLastLevel()
     {
         int levelNum = PlayerPrefs.GetInt("Level");
-        if (levelNum < SceneManager.sceneCount + 1)
+        if (levelNum < SceneManager.sceneCountInBuildSettings + 1)
             SceneManager.LoadScene(levelNum);
     }
-
 
     public void QuitGame()
     {

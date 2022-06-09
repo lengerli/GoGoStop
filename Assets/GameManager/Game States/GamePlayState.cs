@@ -6,6 +6,7 @@ public class GamePlayState : GameAbstractState
 {
     public override void EnterState(GameManager gameManager)
     {
+        gameManager.settingsButton.SetActive(true);
         gameManager.ninjaStMngr.SwitchState(gameManager.ninjaStMngr.IdleState);
         gameManager.squidStMngr.SwitchState(gameManager.squidStMngr.SleepState);
         isStateInitiated = true;

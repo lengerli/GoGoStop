@@ -17,10 +17,9 @@ public class GameLevelEnterState : GameAbstractState
 
     public override void UpdateState(GameManager gameManager)
     {
-        if (gameManager.camAnimController.GetCurrentAnimatorStateInfo(0).IsName("Level1_CameraSceneEntryAnim") &&
+        if (gameManager.camAnimController.GetCurrentAnimatorStateInfo(0).IsName("CameraSceneEntryAnim") &&
             gameManager.camAnimController.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.99f)
         {
-            gameManager.camAnimController.enabled = false;
             gameManager.camAnimController.SetBool("SceneEntry", false);
             gameManager.SwitchState(gameManager.ReadyToStartState);
         }
@@ -28,6 +27,7 @@ public class GameLevelEnterState : GameAbstractState
 
     public override void ExitState(GameManager gameManager)
     {
+        gameManager.camAnimController.enabled = false;
         isStateInitiated = false;
     }
 }

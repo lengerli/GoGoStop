@@ -27,6 +27,7 @@ public class NinjaReadyToAttackState : NinjaAbstractState
     {
         ninja.rgbdy.AddForce(ninja.gravityScale * Vector3.down, ForceMode.Acceleration);
     }
+
     public override void ExitState(NinjaStateManager ninja)
     {
         ninja.killButton.gameObject.SetActive(false);

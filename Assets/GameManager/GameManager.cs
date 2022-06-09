@@ -11,6 +11,10 @@ public class GameManager : MonoBehaviour
     public SquidStateManager squidStMngr;
     public Animator camAnimController;
 
+    public GameObject settingsButton;
+    public Button muteButton;
+    public Button unMuteButton;
+
     public GameObject settingsPanel;
     public GameObject gameLostText;
 

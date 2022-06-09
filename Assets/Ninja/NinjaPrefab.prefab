@@ -14756,7 +14756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rgbdy: {fileID: 3760346033228540102}
-  hopForceMagnitude: 12
+  hopForceMagnitude: 15
   hopForceDirection: {x: 0, y: 2, z: -0.75}
   trnsfrm: {fileID: 3721617844492470220}
   gravityScale: 100
@@ -14782,7 +14782,10 @@ MonoBehaviour:
   - {fileID: 0}
   gameManager: {fileID: 0}
   woundPosition: {x: 0, y: 0, z: 0}
-  bloodGushers: []
+  bloodGushers:
+  - {fileID: 3984625522069837288}
+  - {fileID: 2851722309800541552}
+  - {fileID: 1060670203912943140}
 --- !u!95 &4102224121785146740
 Animator:
   serializedVersion: 3
@@ -14814,8 +14817,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 103b870e9dfa7494cb0d78f05330e614, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMaskPosX: 46
-  minMaskPosX: 16.45
+  maxMaskPosX: 29
+  minMaskPosX: -29.5
   healthMaskRect: {fileID: 0}
   maxHealth: 100
   currentHealth: 100

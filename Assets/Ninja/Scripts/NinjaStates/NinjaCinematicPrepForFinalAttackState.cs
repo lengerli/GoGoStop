@@ -10,6 +10,7 @@ public class NinjaCinematicPrepForFinalAttackState : NinjaAbstractState
         isStateInitialized = true;
         ninja.squidStateMan.SwitchState(ninja.squidStateMan.CinematicFreezeState);
         ninja.cameraZoomAnim.enabled = true;//main cam zoom anim oynatmaya baþlat
+        ninja.cameraZoomAnim.SetBool("RoundAbout", true);
     }
 
     bool orthPerspTransitionCalled = false;
@@ -17,21 +18,19 @@ public class NinjaCinematicPrepForFinalAttackState : NinjaAbstractState
 
     public override void UpdateState(NinjaStateManager ninja)
     {
-        if (orthPerspTransitionCalled == false && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
+        if (orthPerspTransitionCalled == false &&
+            ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn") &&
+            ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.5f)
         {
             ninja.camZoom.ZoomCamForNinjaAttack();//Zoom animasyonunun ortasýndayken orth-persp camera transition çaðýr
             orthPerspTransitionCalled = true;
-            ninja.cameraZoomAnim.SetBool("RoundAbout", true);
             ninja.SetUpVictoryWalkCorridor();
         }
-        else if (orthPerspTransitionCalled == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 2.45f)
+        else if (zoomAnimEnded == false && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn") &&
+            orthPerspTransitionCalled == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.98f)
             zoomAnimEnded = true;
-        else if(zoomAnimEnded == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 1f)
-        {
+        else if (zoomAnimEnded == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn") == false && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.98f)
             ninja.SwitchState(ninja.FinalizeAttackState);
-            //TODO artýk final attak statelere geçebiliriz (squid için de ninja için de. squidde animasyonu serbest býrakýcaz sadece)
-        }
-        
     }
 
     public override void ApplyGravityState(NinjaStateManager ninja)

@@ -15,7 +15,8 @@ public class NinjaIdleState : NinjaAbstractState
 
     public override void UpdateState(NinjaStateManager ninja)
     {
-        if ( Input.GetKey(KeyCode.Space)  && ninja.ninjaBottom.isNinjaBottomTouchingFloor)
+        if ( ( Input.GetKey(KeyCode.Space) || Input.touchCount > 0) 
+            && ninja.ninjaBottom.isNinjaBottomTouchingFloor )
             ninja.SwitchState(ninja.HopState);
     }
 
