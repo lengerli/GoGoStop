@@ -14366,6 +14366,7 @@ MonoBehaviour:
   eyePositionAtSight: {x: 0, y: 0, z: 0}
   eyeRotationAtSight: {x: 0, y: 0, z: 0, w: 0}
   eyeRotationAtStart: {x: 0, y: 0, z: 0, w: 0}
+  rotateAxis: {x: 0, y: 0, z: 0}
   pushWave: {fileID: 1049684208}
   pushDamage: 35
 --- !u!54 &1919011609953790

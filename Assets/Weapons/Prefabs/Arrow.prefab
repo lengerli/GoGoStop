@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4830025c058998f4ab18622758f4304c, type: 2}
+  - {fileID: 2100000, guid: 06643820638966d49a8f04a035ba749e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,6 +116,8 @@ MonoBehaviour:
   delayAction: 1
   arrowShootVelocity: 135
   rgbd: {fileID: 8198839438277277235}
+  damage: 0
+  woundPoint: {fileID: 0}
 --- !u!135 &380001320830796037
 SphereCollider:
   m_ObjectHideFlags: 0

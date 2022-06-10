@@ -52,7 +52,6 @@ public class NinjaStateManager : MonoBehaviour
     public NinjaWalkIntoSceneState WalkIntoSceneState = new NinjaWalkIntoSceneState();
     public NinjaIdleState IdleState = new NinjaIdleState();
     public NinjaHopState HopState = new NinjaHopState();
-    public NinjaReceiveAttackState ReceiveAttackState = new NinjaReceiveAttackState();
     public NinjaReceivePushState ReceivePushState = new NinjaReceivePushState();
     public NinjaRecoverFromPushState RecoverFromPushState = new NinjaRecoverFromPushState();
     public NinjaFrozenState FrozenState = new NinjaFrozenState();

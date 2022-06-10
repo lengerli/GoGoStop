@@ -39426,6 +39426,7 @@ MonoBehaviour:
   eyePositionAtSight: {x: 0, y: 0, z: 0}
   eyeRotationAtSight: {x: 0, y: 0, z: 0, w: 0}
   eyeRotationAtStart: {x: 0, y: 0, z: 0, w: 0}
+  rotateAxis: {x: 0, y: 0, z: 0}
   pushWave: {fileID: 1049684208}
   pushDamage: 35
 --- !u!54 &1919011609953790
@@ -39757,19 +39758,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.902551
+      value: 0.9025853
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.43049467
+      value: -0.43051103
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.007876463
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0037568794
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -39777,7 +39778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3721617844492470220, guid: e2846fbf0a828844285857c9e0390033, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
