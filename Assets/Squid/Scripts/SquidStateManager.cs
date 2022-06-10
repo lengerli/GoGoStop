@@ -42,6 +42,7 @@ public class SquidStateManager : MonoBehaviour
     public Vector3 eyePositionAtSight;
     public Quaternion eyeRotationAtSight;
     public Quaternion eyeRotationAtStart;
+    public Vector3 rotateAxis;
 
     public GameObject pushWave;
 
@@ -51,6 +52,7 @@ public class SquidStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rotateAxis = transform.up;
         eyeForSight = sightingAlarm.gameObject;
         eyeForSightTrnsf = eyeForSight.transform;
         squidBodyDefaultRotation = squidBodyTrn.rotation;

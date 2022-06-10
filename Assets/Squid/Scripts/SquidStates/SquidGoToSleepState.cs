@@ -5,21 +5,27 @@ using UnityEngine;
 public class SquidGoToSleepState : SquidAbstractState
 {
     float reTurnAngleTotal;
+    float reTurnSpeed;
+    float reTurnAngleAtFrame;
 
     public override void EnterState(SquidStateManager squid)
     {
         squid.isNinjaSighted = false;
         squid.eyeForSightTrnsf.localRotation = squid.eyeRotationAtStart;
         squid.eyeForSightTrnsf.localPosition = squid.eyePositionAtStart;
-
+        squid.eyeForSight.SetActive(false);
         squid.animator.SetBool("Sleep", true);
-        squid.rgbdy.angularVelocity = Vector3.up * squid.turnSpeedForPatrolStart;
+        reTurnSpeed = squid.turnSpeedForPatrolStart;
     }
 
     public override void UpdateState(SquidStateManager squid)
     {
-        if (reTurnAngleTotal < Mathf.Deg2Rad * 259f)
-            reTurnAngleTotal += Time.deltaTime * squid.turnSpeedForPatrolStart;
+        if (reTurnAngleTotal < 180f)
+        {
+            reTurnAngleAtFrame = Time.deltaTime * reTurnSpeed;
+            reTurnAngleTotal += reTurnAngleAtFrame;
+            squid.transform.Rotate(squid.rotateAxis, reTurnAngleAtFrame);
+        }
         else
         {
             reTurnAngleTotal = 0f;

@@ -9,21 +9,35 @@ public class SquidPatrolState : SquidAbstractState
     float patrolDurationTime;
     float timeElapsed;
     float turnAngleTotal;
+    float turnAngleAtFrame;
+    float turnSpeed;
+    bool isTurnComplete;
 
     public override void EnterState(SquidStateManager squid)
     {
         //Randomize time for patrol duration
+        isTurnComplete = false;
         patrolDurationTime = Random.Range(squid.minPatrolTime, squid.maxPatrolTime);
-        squid.rgbdy.angularVelocity = Vector3.up * squid.turnSpeedForPatrolStart;
+        turnSpeed = squid.turnSpeedForPatrolStart;
     }
 
     public override void UpdateState(SquidStateManager squid)
     {
         //Stop the squid rotation when it faces the ninja (it should be 180 degrees but somehow 259 degrees work!)
-        if (turnAngleTotal < Mathf.Deg2Rad * 259f)
-            turnAngleTotal += Time.deltaTime * squid.turnSpeedForPatrolStart;
-        else
-            squid.rgbdy.angularVelocity = Vector3.zero;
+        if (turnAngleTotal < 180f)
+        {
+            turnAngleAtFrame = Time.deltaTime * turnSpeed;
+            turnAngleTotal += turnAngleAtFrame;
+            squid.transform.Rotate(squid.rotateAxis, turnAngleAtFrame);
+        }
+        else if (isTurnComplete == false)
+        {
+            turnSpeed = 0;
+            float trimAngle = 180f - turnAngleTotal;
+            //Trim the rotation to make sure it ends up at 180 degrees
+            squid.transform.Rotate(squid.rotateAxis, trimAngle);
+            isTurnComplete = true;
+        }
 
         if (timeElapsed < patrolDurationTime)
             timeElapsed += Time.deltaTime;

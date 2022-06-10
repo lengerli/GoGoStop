@@ -27,9 +27,9 @@ public class NinjaCinematicPrepForFinalAttackState : NinjaAbstractState
             ninja.SetUpVictoryWalkCorridor();
         }
         else if (zoomAnimEnded == false && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn") &&
-            orthPerspTransitionCalled == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.98f)
+            orthPerspTransitionCalled == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.97f)
             zoomAnimEnded = true;
-        else if (zoomAnimEnded == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn") == false && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.98f)
+        else if (zoomAnimEnded == true && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).IsName("ZoomIn") == false && ninja.cameraZoomAnim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.97f)
             ninja.SwitchState(ninja.FinalizeAttackState);
     }
 

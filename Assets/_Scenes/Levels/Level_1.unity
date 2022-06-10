@@ -14117,9 +14117,9 @@ MonoBehaviour:
   maxWokeWait: 0.95
   minPatrolTime: 1.5
   maxPatrolTime: 3.5
-  turnSpeedForPatrolStart: 10
+  turnSpeedForPatrolStart: 360
   squidStartRotation: {x: 0, y: 0, z: 0, w: 0}
-  lookAroundPossibility: 100
+  lookAroundPossibility: 90
   lookAroundTime: 0.75
   squidBodyRotationAtSightingMoment: {x: 0, y: 0, z: 0, w: 0}
   squidBodyDefaultRotation: {x: 0, y: 0, z: 0, w: 0}
