@@ -1,5 +1,5 @@
 # GoGoStop
- Inspired by the first game in tv show "Squid Game".
+ Inspired by the first child's game in the tv show "Squid Game".
  
  Notes:
  - Only the main character (ninja) model and animations are of my own making. 
